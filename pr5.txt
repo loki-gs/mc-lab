@@ -1,0 +1,23 @@
+area square, code, readonly
+entry				                                                  
+start
+ldr r0,=table1		                                  
+ldr r1,=7	                                
+mov r1,r1,lsl#0x2	                           
+add r0,r0,r1		                                         
+ldr r3,[r0]		                   
+xss      b xss
+table1 DCD 0X00000000                         
+DCD 0X00000001
+DCD 0X00000004
+DCD 0X00000009
+DCD 0X00000010
+DCD 0X00000019
+DCD 0X00000024
+DCD 0X00000031
+DCD 0X00000040
+DCD 0X00000051
+DCD 0X00000064;	
+area data1,data,readwrite
+result               DCD 0X00000000
+end	
